@@ -6,7 +6,6 @@ from rossmann22.Rossmann22 import Rossmann22
 
 #loadin model 
 model = pickle.load(open('model/model_rossmann.pkl','rb'))
-## no linux eh home/model...
 
 #initialize API 
 app = Flask( __name__)
