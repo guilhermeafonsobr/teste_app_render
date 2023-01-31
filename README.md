@@ -32,5 +32,13 @@ With the feature diagram above, several hypotheses were generated; the ones that
 12. Stores should sell less during school holidays
 13. Stores that open on Sundays should sell more
 
-The discussion of each hypothesis to validate or refute it is found in the notebook file.
-Below are the summary of the analysis of hypotheses 1, 10 and 13:
+The discussion of each hypothesis to validate or refute it is found in the notebook.
+
+| Model Name |  MAE CV | MAPE CV | RMSE CV |
+|--- |--- |--- |--- |
+| Linear Regression| 2082.46 +/- 295.78 | 30.26 +/- 1.66 | 2950.11 +/- 468.88 |
+| Lasso Regression | 2116.65 +/- 341.58 | 29.2  +/- 1.18 | 3056.56 +/- 504.44 |
+| Random Forest Regressor | 837.7   +/- 219.23 | 11.61 +/- 2.32 | 1256.59 +/- 320.26 |
+| XGBoost Regressor | 767.43 +/- 187.22 | 0.115397 +/- 0.221 | 1103.412218 +/- 278.36|
+
+
