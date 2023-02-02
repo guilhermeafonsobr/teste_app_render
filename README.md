@@ -41,4 +41,46 @@ The discussion of each hypothesis to validate or refute it is found in the noteb
 | Random Forest Regressor | 837.7   +/- 219.23 | 11.61 +/- 2.32 | 1256.59 +/- 320.26 |
 | XGBoost Regressor | 767.43 +/- 187.22 | 0.115397 +/- 0.221 | 1103.412218 +/- 278.36|
 
+My final choice of model was XGBoost.
 
+In this case, the model will be hosted on a free cloud (Heroku), where we have a space limitation. If I choose random forest, the final model would be 1GB. Meanwhile, with XGBoost, the model became much smaller.
+
+The metric problems can be solved in "Hyperparameter fine tuning" step.
+
+Look the metrics after a better choice of parameters to train the model:
+
+| Model Name |  MAE CV | MAPE CV | RMSE CV |
+|--- |--- |--- |--- |
+| XGBoost Regressor | 767.43 | 0.115397 | 1103.412218 |
+
+## Business Results
+
+Finally, with the model trained, it's time to translate model performance into business performance. Considering the MAE obtained in the forecast for each store, during the test period, the best and worst sales scenarios for each store were projected.
+
+Below, the expected business performance of the first 5 stores:
+
+| store	| predictions |	MAE |	MAPE	| worst_scenario | best_scenario |
+| 1	| 169305.70	| 308.78	| 0.07 |	157881.01	| 180730.40 |
+| 2	| 182122.09	| 395.43	| 0.08 |	167491.11	| 196753.09 |
+| 3	| 258817.89	| 538.91	| 0.08 |	238878.23	| 278757.55 |
+| 4	| 338596.25	| 944.09	| 0.09 |	303664.96	| 373527.54 |
+| 5	| 174173.37	| 388.33	| 0.09 |	159805.20	| 188541.55 |
+
+Overall, the model performed well.
+But it is always possible to improve it; following the CRISP methodology, if a new round is needed, it may be considered to train stores individually or even a smaller group of them, for example. Another possibility is to explore other machine learning models.
+However, the deadline for delivery of forecasts and the performance of the model already in production must be taken into account. Something very heavy or time-consuming is also impractical, even if it performs exceptionally well.
+It is a trade-off that must be closely aligned with the company's management.
+Further details on business performance are available on the notebook.
+
+## Sneak peak from Telegram Bot
+
+## Lessons Learned
+* Metrics are important, but they are not everything;
+* Make more graphics, make better graphics;
+* Keep your code clean;
+* Plan and re-plan your work;
+
+## Next cycle
+* Better plots;
+* More tests in ML algoritms;
+* Build a pipeline to retrain model.
